@@ -11,10 +11,9 @@
 </head>
 <body>
   <div class="container">
-    <h1>TAGESSCHAU NEWS</h1>
     <div class="news-container">
       <div class="selects">
-        <form action="/news">
+        <form action="/news" method="post">
           <select name="bundesland" id="bundesland">
             <option value="1">Baden-Württemberg</option>
             <option value="2">Bayern</option>
@@ -45,11 +44,17 @@
           <button type="submit">Suchen</button>
         </form>
       </div>
-      <h2> Test</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, explicabo fuga, voluptatibus quidem blanditiis, adipisci perferendis voluptate incidunt qui a rem quo. Qui voluptas veritatis earum doloremque architecto hic quae.
-      Repellendus reiciendis officia debitis laboriosam quam voluptatibus a molestias sit itaque aliquam magnam, culpa repudiandae maxime! Esse alias iusto illo repudiandae quis et sed dolor impedit excepturi, consectetur reiciendis harum.
-      Sunt accusantium quam voluptas est aliquam aperiam dolores voluptatem, nobis fugiat at nisi voluptates fugit, repellat, modi reiciendis cupiditate expedita consequatur! Obcaecati dolorum placeat fugit animi, minima blanditiis ab vel?</p>
+      
+      <div class="news-content">
+        <% for (let i = 0; i < 5 ; i++) {%>
+          <h2> <%= locals.content[i].title %></h2>
+          <p> <%= locals.content[i].firstSentence %></p>
+          <a href="<%= locals.content[i].detailsweb %>" target="_blank">Mehr lesen</a>
+          
+          <% } %> 
+      </div>
     </div>
+    
   </div>
   
 </body>
